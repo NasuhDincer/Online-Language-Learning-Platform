@@ -4,7 +4,7 @@ session_start();
 // session for id_created
 $_SESSION["id_created"] = "";
 
-echo '<br><br><br>User Details : <br>';
+echo '<br>User Details : <br>';
 
 // create a view from user table whose attributes are id, name, email, password
 $sql = "CREATE OR REPLACE VIEW user_view AS SELECT id, name, email FROM User";
@@ -21,12 +21,15 @@ if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
         echo "id: " . $row["id"]. " - Name: " . $row["name"]. " - Email: " . $row["email"]. "<br>";
+        // hold datas in array
+        $id[] = $row["id"];
+        $name[] = $row["name"];
+        $email[] = $row["email"];
     }
-} else {
+} 
+else {
     echo "0 results";
 }
-
-echo '<br><br><br>Add User : <br>';
 
 // get users id, name, email, password and insert into database
 if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password'])) {
@@ -62,6 +65,37 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password'])
 		echo "fail";
 	}
 }
+// add css style for signup form
+echo '<style>
+.signup-form {
+    width: 30%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #B0C4DE;
+    background: white;
+    border-radius: 0px 0px 10px 10px;
+}
+</style>';
+// add css style for signup button
+echo '<style>
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+</style>';
+
+//add css for form-group
+echo '<style>
+.form-group {
+    margin-bottom: 10px;
+}
+</style>';
+
 
 ?>
 
@@ -73,6 +107,9 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password'])
 <body>
 	<div class="signup-form">
 		<form action="admin.php" method="post">
+            <div class="form-group">
+                <label>Add User</label>
+            </div>
 			<div class="form-group">
 				<label for="name">Name</label>
 				<input type="text" class="form-control" id="name" name="name" placeholder="Name">
@@ -91,7 +128,10 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password'])
 			</div>        
             <button type="submit" class="btn btn-primary" name="submit">Submit</button>
 		</form>
-	</div>
+	</div>   
+
 </body>
 </html>
+
+
 
