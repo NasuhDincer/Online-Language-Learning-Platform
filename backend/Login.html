@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<div className={classes.colmform}>
+    <div className={classes.formcontainer}>
+        <form  action="user.php" method="post" onSubmit={submitHandler}>
+            <input type="text"  name="username" required id="id" ref={idRef} placeholder="Insert User ID"
+                className={classes.input}></input>
+
+            <br />
+            <input type="password"  name="password" required id="password" ref={passwordRef} placeholder="Insert User Password"
+                className={classes.input}></input>
+            <br />
+            <input type="submit" value = "Login" name="submit" className={classes.btnlogin}></input>
+        </form>
+    </div>
+</div>
+
+</html>
