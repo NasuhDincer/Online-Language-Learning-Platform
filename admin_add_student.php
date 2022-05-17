@@ -34,6 +34,36 @@ if (isset($_POST['student_level']) && isset($_POST['student_gpa']) && isset($_PO
 
 }
 
+echo '<style>
+.signup-form {
+    width: 30%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #B0C4DE;
+    background: white;
+    border-radius: 0px 0px 10px 10px;
+}
+</style>';
+// add css style for signup button
+echo '<style>
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+</style>';
+
+//add css for form-group
+echo '<style>
+.form-group {
+    margin-bottom: 10px;
+}
+</style>';
+
 ?>
 
 <html>
