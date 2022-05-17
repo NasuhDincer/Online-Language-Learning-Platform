@@ -44,6 +44,7 @@ function LoginForm(props) {
             id="id"
             ref={idRef}
             placeholder="Insert User ID"
+            className={classes.input}
           ></input>
           <br />
           <input
@@ -52,6 +53,7 @@ function LoginForm(props) {
             id="password"
             ref={passwordRef}
             placeholder="Insert User Password"
+            className={classes.input}
           ></input>
           <br />
           <button className={classes.btnlogin}>Login</button>

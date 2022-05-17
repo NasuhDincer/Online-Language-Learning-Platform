@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<div className={classes.colmform}>
+    <div className={classes.formcontainer}>
+        <form onSubmit={submitHandler}>
+            <input type="text" required id="id" ref={idRef} placeholder="Insert User ID"
+                className={classes.input}></input>
+
+            <br />
+            <input type="password" required id="password" ref={passwordRef} placeholder="Insert User Password"
+                className={classes.input}></input>
+            <br />
+            <button className={classes.btnlogin}>Login</button>
+        </form>
+    </div>
+</div>
+
+</html>
