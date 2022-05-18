@@ -1,57 +1,76 @@
 <html>
+<main>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</main>
+
 <div>
-    <header className={classes.header}>
-        <div className={classes.logo}>
-            <ul>
-                <li>
-                    <Link to="/StdHome">Home</Link>
-                </li>
-                <li>
-                    <Link to="/StdClass">Class</Link>
-                </li>
-                <button className={classes.btn}>Logout</button>
-            </ul>
-        </div>
-    </header>
-    <div className={classes.div1}>
-        <h1>Request Class from a Teacher</h1>
-        <br />
-        <select>
-            {DUMMY_DATA.map((option) => (
-            <option value={option}>{option}</option>
-            ))}
-        </select>
+    <div class="row">
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Class</a>
+                        </li>
+                    </ul>
+                    <button class="btn btn-outline-success" type="submit" style="margin-right: 0.5cm;">Logout</button>
+                </div>
+            </div>
+        </nav>
     </div>
-    <br />
-    <button className={classes.btn}>Apply For Class</button>
-    <div className={classes.div2}>
-        <h1>Request Online Meeting Request</h1>
-        <br />
-        <h>
-            <b>Select Native Speaker</b>
-        </h>
-        <br />
-        <select>
-            {DUMMY_DATA.map((option) => (
-            <option value={option}>{option}</option>
-            ))}
-        </select>
-        <br />
-        <br />
-        <h>
-            <b>Provide Date and Time</b>
-        </h>
-        <br />
-        <input></input>
-        <br />
-        <br />
-        <h>
-            <b>Comments</b>
-        </h>
-        <br />
-        <textarea></textarea>
-        <br />
-        <button className={classes.btn}>Request</button>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title">Request Class from a Teacher</h1>
+                    <br>
+                    <select class="btn btn-primary" style="width:55%;">
+                        {DUMMY_DATA.map((option) => (
+                        <option>Options</option>
+                        ))}
+                    </select><br><br>
+                    <button class="btn btn-primary">Apply For Class</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title">Request Online Meeting Request</h1><br>
+                    <h>
+                        <b>Select Native Speaker</b>
+                    </h>
+                    <br />
+                    <select class="btn btn-primary">
+                        <option>Option</option>
+                    </select>
+                    <br />
+                    <br />
+                    <div class="input-group">
+                        <span class="input-group-text">Date and Time</span>
+                        <input type="text" aria-label="First name" class="form-control">
+                        <input type="text" aria-label="Last name" class="form-control">
+                    </div>
+                    <br />
+                    <br>
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Leave a comment here"
+                            id="floatingTextarea"></textarea>
+                        <label for="floatingTextarea">Comments</label>
+                    </div>
+                    <br />
+                    <button class="btn btn-primary">Request</button>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 

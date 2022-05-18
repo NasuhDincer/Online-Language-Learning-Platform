@@ -1,18 +1,51 @@
 <!DOCTYPE html>
 <html>
-<div className={classes.colmform}>
-    <div className={classes.formcontainer}>
-        <form  action="user.php" method="post" onSubmit={submitHandler}>
-            <input type="text"  name="username" required id="id" ref={idRef} placeholder="Insert User ID"
+<div>
+    <h1 style="display: flex; justify-content: center;">Login</h1>
+    <div class="div1">
+        <form name="loginform" action="user.php" method="post" onsubmit="isCorrect()">
+            <input type="text" name="username" required id="id" ref={idRef} placeholder="Insert User ID"
                 className={classes.input}></input>
 
-            <br />
-            <input type="password"  name="password" required id="password" ref={passwordRef} placeholder="Insert User Password"
-                className={classes.input}></input>
-            <br />
-            <input type="submit" value = "Login" name="submit" className={classes.btnlogin}></input>
+            <br /><br>
+            <input type="password" name="password" required id="password" ref={passwordRef}
+                placeholder="Insert User Password" className={classes.input}></input>
+            <br /><br>
+            <input type="submit" value="Login" name="submit"
+                style="background-color: rgb(27, 61, 255); font-weight: bold; height: 1cm;"></input>
         </form>
     </div>
+
+    <script>
+        function isCorrect() {
+            var temp = document.forms["loginform"]["username"];
+
+            if (!temp.includes("@")) {
+                alert("Username field must be a mail!");
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+    </script>
 </div>
+
+<style>
+    .div1 {
+        background-color: rgb(75, 75, 75);
+        width: fit-content;
+        margin: 0 auto;
+        margin-top: 0 auto;
+        border-radius: 1cm;
+        padding: 0.5cm;
+    }
+
+    input {
+        border-radius: 3cm;
+        width: 10cm;
+        height: 0.8cm;
+    }
+</style>
 
 </html>
